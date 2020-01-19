@@ -11,11 +11,7 @@ void FlyNoWay::fly()
     std::cout<<"fly no way"<<std::endl;
 }
 
-// int main(void)
-// {
-//     FlyBehavior *flyWithWings = new FlyWithWings();
-//     FlyBehavior *flyNoWay = new FlyNoWay();
-
-//     flyWithWings->fly();
-//     flyNoWay->fly();
-// }
+void FlyWithRocket::fly()
+{
+    std::cout<<"fly with rocket"<<std::endl;
+}

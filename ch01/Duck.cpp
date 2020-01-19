@@ -40,4 +40,3 @@ void DecoyDuck::display()
 {
     std::cout<<"I'm a DecoyDuck"<<std::endl;
 }
-
