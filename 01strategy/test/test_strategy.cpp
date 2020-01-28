@@ -28,4 +28,5 @@ int main(void)
     dDuck.performfly();
     dDuck.performquack();
     system("pause");
+    return 0;
 }
