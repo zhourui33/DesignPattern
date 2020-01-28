@@ -2,7 +2,8 @@
 #include"Duck.h"
 
 
-Duck::Duck(FlyBehavior *fb) : fb_(fb){}
+Duck::Duck(FlyBehavior *fb, QuackBehavior *qb) : fb_(fb),qb_(qb)
+{}
 
 void Duck::swim()
 {
@@ -19,10 +20,20 @@ void Duck::performfly()
     fb_->fly();
 }
 
-MallardDuck::MallardDuck(FlyBehavior *fb) : Duck(fb){}
-RedheadDuck::RedheadDuck(FlyBehavior *fb) : Duck(fb){}
-RubberDuck::RubberDuck(FlyBehavior *fb) : Duck(fb){}
-DecoyDuck::DecoyDuck(FlyBehavior *fb) : Duck(fb){}
+void Duck::setQuackBehavior(QuackBehavior *qb)
+{
+    qb_ = qb;
+}
+
+void Duck::performquack()
+{
+    qb_->Quack();
+}
+
+MallardDuck::MallardDuck(FlyBehavior *fb, QuackBehavior *qb) : Duck(fb, qb){}
+RedheadDuck::RedheadDuck(FlyBehavior *fb, QuackBehavior *qb) : Duck(fb, qb){}
+RubberDuck::RubberDuck(FlyBehavior *fb, QuackBehavior *qb) : Duck(fb, qb){}
+DecoyDuck::DecoyDuck(FlyBehavior *fb, QuackBehavior *qb) : Duck(fb, qb){}
 
 void MallardDuck::display()
 {
