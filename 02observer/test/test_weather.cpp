@@ -4,24 +4,18 @@
 
 int main()
 {
-    WeatherData *wdata = new WeatherData();
-    CurrentConditionDisplay *cc = new CurrentConditionDisplay();
-    StatisticsDisplay *stat = new StatisticsDisplay();
-    ForecastDisplay *fore = new ForecastDisplay();
+    WeatherData *wdata = new WeatherData(84, 68, 31.2);
+    CurrentConditionDisplay *cc = new CurrentConditionDisplay(wdata);
+    StatisticsDisplay *stat = new StatisticsDisplay(wdata);
+    ForecastDisplay *fore = new ForecastDisplay(wdata);
 
-    wdata->attachObserver(cc);
-    wdata->attachObserver(stat);
-    wdata->attachObserver(fore);
+    wdata->setMeasurement(80, 65, 30.4);
+    std::cout<<"detach current"<<std::endl;
+    wdata->detachObserver(cc);
+    wdata->setMeasurement(82, 70, 29.2);
+    wdata->detachObserver(stat);
+    wdata->setMeasurement(78, 90, 29.2);
 
-    wdata->setMeasurement(1.11, 2.22, 3.33);
-    cc->show();
-    stat->show();
-    fore->show();
-
-    wdata->setMeasurement(2.61, 7.26, 13.24);
-    cc->show();
-    stat->show();
-    fore->show();
     system("pause");
     return 0;
 }

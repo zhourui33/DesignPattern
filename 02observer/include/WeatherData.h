@@ -8,6 +8,8 @@
 class WeatherData : public Subject
 {
     public:
+    WeatherData():temprature(0),humidity(0),pressure(0){}
+    WeatherData(float temp, float humi, float pres):temprature(temp),humidity(humi),pressure(pres){}
     void attachObserver(Observer *ob) override;
     void detachObserver(Observer *ob) override;
     void notifyObserver() override;
